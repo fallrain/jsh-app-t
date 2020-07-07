@@ -9,7 +9,7 @@
 .login-banner {
   width: 638px;
   height: 184px;
-  background: url('~@/assets/img/login/login-haier.png') no-repeat;
+  background: url('../../../assets/img/login/login-haier.png') no-repeat;
   background-size: 100%;
   margin: 180*100/1334 + vh auto 0 auto;
 }
@@ -34,6 +34,7 @@
   @include login-btn;
   border: 1px solid #2283E2;
   color: #2283E2;
+  background: #fff;
 }
 
 .login-primary-btn {
@@ -42,7 +43,86 @@
   color: #fff;
 }
 
-.login-btns-wrap{
+.login-btns-wrap {
   margin-top: 56px;
   margin-bottom: 40px;
+}
+
+.login-protocol-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.login-protocol-checkbox {
+  .at-checkbox__option-wrap {
+    padding: 0;
+  }
+}
+
+.login-protocol-text {
+  color: #666;
+  font-size: 28px;
+  line-height: 40px;
+}
+
+.login-other-wrap {
+  position: relative;
+  height: 28px;
+  margin-top: 120px;
+}
+
+.login-other-line {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 1px;
+  background: #F6F6F6;
+}
+
+.login-other-text {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 28px;
+  line-height: 28px;
+  background: #fff;
+  color: #BABABA;
+  font-size: 20px;
+  text-align: center;
+}
+
+.login-other-btns {
+  margin-top: 40px;
+  text-align: center;
+
+  .iconfont {
+    font-size: 60px;
+    color: #B3B1B1;
+  }
+}
+
+.login-btm-wrap{
+  display: flex;
+  align-items: center;
+  margin-top: 138px;
+  margin-bottom: 66px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.login-btm-text{
+  color: #2283E2;
+  font-size: 24px;
+}
+
+.login-btm-line{
+  width: 1px;
+  height: 20px;
+  background: #DFDEDE;
+  margin-left: 24px;
+  margin-right: 24px;
 }

@@ -29,7 +29,8 @@ module.exports = {
     ],
     'no-continue': 0,
     'import/no-dynamic-require': 0,
-    'global-require': 0
+    'global-require': 0,
+    'import/first': 0
   },
   globals: {
     module: 'readonly'

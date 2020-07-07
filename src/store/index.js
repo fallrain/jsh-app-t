@@ -4,7 +4,7 @@ import {
   compose
 } from 'redux';
 import thunkMiddleware from 'redux-thunk';
-import createSagaMiddleware from 'redux-saga';
+// import createSagaMiddleware from 'redux-saga';
 import rootReducer from './reducers';
 
 const composeEnhancers =
@@ -16,7 +16,6 @@ const composeEnhancers =
 
 const middlewares = [
   thunkMiddleware,
-  createSagaMiddleware()
 ];
 
 if (process.env.NODE_ENV === 'development' && process.env.TARO_ENV !== 'quickapp') {

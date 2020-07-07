@@ -5,7 +5,7 @@ import {
   Navigator,
   View
 } from '@tarojs/components';
-import pages from '@/pages';
+import pages from 'jsrc/pages';
 
 import './index.scss';
 

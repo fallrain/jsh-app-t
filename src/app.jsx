@@ -1,8 +1,16 @@
-import React, { Component } from 'react';
-import { Provider } from 'react-redux';
+import React, {
+ Component
+} from 'react';
+import {
+ Provider
+} from 'react-redux';
 
 import configStore from './store';
 
+
+// 全局引入一次即可
+import 'taro-ui/dist/style/index.scss';
+import './assets/font/iconfont.css';
 import './app.scss';
 
 const store = configStore();

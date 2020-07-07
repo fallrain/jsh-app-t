@@ -1,0 +1,16 @@
+{
+  "id": "1929794",
+  "name": "jsh-app",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "巨商汇APP",
+  "glyphs": [
+    {
+      "icon_id": "10905628",
+      "name": "微信",
+      "font_class": "weixin",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    }
+  ]
+}

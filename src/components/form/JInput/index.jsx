@@ -12,10 +12,10 @@ class JInput extends React.Component {
     const {
       name,
       value
-    }=this.props;
+    } = this.props;
     this.state = {
-      name,
-      value
+      $name: name,
+      $value: value
     };
   }
 
@@ -23,21 +23,21 @@ class JInput extends React.Component {
     /*值改变方法，组件受控方法*/
     const {
       handChange
-    }=this.props;
+    } = this.props;
     this.setState({
-      [target.name]: target.value
+      $value: target.value
     });
     // 输入框额外的change事件
     handChange && (handChange({
-      name:target.name,
-      value:target.value
+      name: target.name,
+      value: target.value
     }));
   };
 
   render() {
     const {
-      name,
-      value
+      $name,
+      $value
     } = this.state;
     const {
       valChange
@@ -48,8 +48,8 @@ class JInput extends React.Component {
           className='jInput'
           type='text'
           {...this.props}
-          name={name}
-          value={value}
+          name={$name}
+          value={$value}
           onChange={valChange}
         />
       </View>

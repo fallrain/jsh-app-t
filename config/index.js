@@ -16,14 +16,16 @@ const config = {
   onePxTransform: true,
   sourceRoot: 'src',
   outputRoot: 'dist',
-  plugins: [],
+  plugins: [
+    '@tarojs/plugin-sass', // 使用 Sass
+  ],
   defineConstants: {},
   copy: {
     patterns: [],
     options: {}
   },
   alias: {
-    '@': path.resolve(__dirname, '..', 'src'),
+    'jsrc': path.resolve(__dirname, '..', 'src'),
     'root': path.resolve(__dirname, '..', '/'),
     '@/components': path.resolve(__dirname, '..', 'src/components')
   },
@@ -65,6 +67,7 @@ const config = {
         }
       }
     },
+    esnextModules: ['taro-ui'],
     webpackChain(chain, webpack) {
       chain.merge({
         plugin: {
