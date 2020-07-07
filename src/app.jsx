@@ -1,14 +1,20 @@
-import React, { Component } from 'react'
-import { Provider } from 'react-redux'
+import React, { Component } from 'react';
+import { Provider } from 'react-redux';
 
-import configStore from './store'
+import configStore from './store';
 
-import './app.scss'
+import './app.scss';
 
-const store = configStore()
+const store = configStore();
 
 class App extends Component {
-  componentDidMount () {}
+  onLaunch(options){
+    /* app 启动函数*/
+    console.log(options);
+  }
+
+  componentDidMount () {
+  }
 
   componentDidShow () {}
 
@@ -23,8 +29,8 @@ class App extends Component {
       <Provider store={store}>
         {this.props.children}
       </Provider>
-    )
+    );
   }
 }
 
-export default App
+export default App;

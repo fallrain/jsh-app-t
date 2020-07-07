@@ -1,3 +1,9 @@
+// eslint 注释不要删除
+/* eslint-disable import/no-commonjs */
+const path = require('path');
+
+const StyleLintPlugin = require('stylelint-webpack-plugin');
+
 const config = {
   projectName: 'jsh-app-t',
   date: '2020-7-2',
@@ -7,25 +13,26 @@ const config = {
     750: 1,
     828: 1.81 / 2
   },
+  onePxTransform: true,
   sourceRoot: 'src',
   outputRoot: 'dist',
   plugins: [],
-  defineConstants: {
-  },
+  defineConstants: {},
   copy: {
-    patterns: [
-    ],
-    options: {
-    }
+    patterns: [],
+    options: {}
+  },
+  alias: {
+    '@': path.resolve(__dirname, '..', 'src'),
+    'root': path.resolve(__dirname, '..', '/'),
+    '@/components': path.resolve(__dirname, '..', 'src/components')
   },
   framework: 'react',
   mini: {
     postcss: {
       pxtransform: {
         enable: true,
-        config: {
-
-        }
+        config: {}
       },
       url: {
         enable: true,
@@ -48,8 +55,7 @@ const config = {
     postcss: {
       autoprefixer: {
         enable: true,
-        config: {
-        }
+        config: {}
       },
       cssModules: {
         enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
@@ -58,13 +64,29 @@ const config = {
           generateScopedName: '[name]__[local]___[hash:base64:5]'
         }
       }
+    },
+    webpackChain(chain, webpack) {
+      chain.merge({
+        plugin: {
+          /*install: {
+            plugin: require('stylelint-webpack-plugin'),
+            args: [{
+              files: ['**!/!*.scss'],
+              fix: true,
+              cache: true,
+              emitErrors: true,
+              failOnError: false
+            }]
+          }*/
+        }
+      });
     }
   }
-}
+};
 
 module.exports = function (merge) {
   if (process.env.NODE_ENV === 'development') {
-    return merge({}, config, require('./dev'))
+    return merge({}, config, require('./dev'));
   }
-  return merge({}, config, require('./prod'))
-}
+  return merge({}, config, require('./prod'));
+};

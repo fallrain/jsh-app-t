@@ -1,0 +1,13 @@
+.jInput {
+  box-sizing: border-box;
+  width: 100%;
+  height: 84px;
+  padding: 22px 40px;
+  color: #666;
+  font-size: 28px;
+  border-bottom: 1px solid #d3d3d3;
+
+  &::-webkit-input-placeholder {
+    color: #BDCADA;
+  }
+}

@@ -1,0 +1,48 @@
+.login-main {
+  background: #fff;
+  min-height: 100vh;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 24px;
+}
+
+.login-banner {
+  width: 638px;
+  height: 184px;
+  background: url('~@/assets/img/login/login-haier.png') no-repeat;
+  background-size: 100%;
+  margin: 180*100/1334 + vh auto 0 auto;
+}
+
+.login-banner-title {
+  color: #333;
+  font-size: 36px;
+  line-height: 50px;
+  text-align: center;
+}
+
+
+@mixin login-btn {
+  width: 100%;
+  height: 84px;
+  font-size: 30px;
+  border-radius: 47px;
+  text-align: center;
+}
+
+.login-default-btn {
+  @include login-btn;
+  border: 1px solid #2283E2;
+  color: #2283E2;
+}
+
+.login-primary-btn {
+  @include login-btn;
+  background: #2283E2;
+  color: #fff;
+}
+
+.login-btns-wrap{
+  margin-top: 56px;
+  margin-bottom: 40px;
+}
