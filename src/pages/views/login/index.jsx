@@ -3,10 +3,14 @@ Component
 } from 'react';
 import {
   Button,
-  View
+  View,
+  Text
 } from '@tarojs/components';
-import JInput from '@/components/form/JInput/index';
+import JInput from 'jsrc/components/form/JInput/index';
 import './index.scss';
+import {
+AtCheckbox
+} from 'taro-ui';
 
 class Login extends Component {
 
@@ -19,7 +23,14 @@ class Login extends Component {
         account: '',
         // 密码
         password: ''
+      },
+      hasReadCheckboxOption: [
+        {
+          value: '1',
+          label: '',
       }
+      ],
+      hasReadCheckedList: ['1']
     };
   }
 
@@ -36,10 +47,22 @@ class Login extends Component {
     });
   }
 
+  hasReadHandleChange = (hasReadCheckedList) => {
+    /*已读事件*/
+    this.setState({
+      hasReadCheckedList
+    });
+  }
+
   render() {
     const {
-      form
+      form,
+      hasReadCheckboxOption,
+      hasReadCheckedList
     } = this.state;
+    const {
+      hasReadHandleChange
+    } = this;
     return (
       <View className='login-main'>
         <View className='login-banner'>
@@ -68,6 +91,27 @@ class Login extends Component {
           <Button
             className='login-default-btn mt40'
           >短信验证码登陆</Button>
+        </View>
+        <View className='login-protocol-wrap'>
+          <AtCheckbox
+            className='login-protocol-checkbox'
+            options={hasReadCheckboxOption}
+            selectedList={hasReadCheckedList}
+            onChange={hasReadHandleChange}
+          />
+          <Text className='login-protocol-text'>我已阅读并同意《软件许可及服务条款》</Text>
+        </View>
+        <View className='login-other-wrap'>
+          <View className='login-other-line'></View>
+          <View className='login-other-text'>其他方式登录</View>
+        </View>
+        <View className='login-other-btns'>
+          <View className='iconfont iconweixin'></View>
+        </View>
+        <View className='login-btm-wrap'>
+          <View className='login-btm-text'>忘记密码</View>
+          <View className='login-btm-line'></View>
+          <View className='login-btm-text'>客服电话：400-898-6666</View>
         </View>
       </View>
     );
